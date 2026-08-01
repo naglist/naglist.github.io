@@ -1,5 +1,6 @@
 import { states } from './data/states'
 import { transporters } from './data/transporters'
+import { saveParcelEntry } from './services/parcelService'
 
 export function renderApp() {
   document.querySelector('#app').innerHTML = `
@@ -177,7 +178,8 @@ dateInput.value = today
   const submitButton = document.querySelector('#submit-btn')
 
 
-  submitButton.addEventListener('click', () => {
+  submitButton.addEventListener('click', async () => {
+    console.log("Submit clicked")
 
     const date = document.querySelector('#date').value
 const state = document.querySelector('#state').value
@@ -201,6 +203,8 @@ const entry = {
 
 }
     
+await saveParcelEntry(entry)
+
 
 
 if (!date) {
