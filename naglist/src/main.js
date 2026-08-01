@@ -1,6 +1,4 @@
 import './style.css'
+import { renderApp } from './app'
 
-document.querySelector('#app').innerHTML = `
-  <h1>Naglist</h1>
-  <p>Project setup successful</p>
-`
+renderApp()
