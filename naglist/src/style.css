@@ -70,3 +70,11 @@ select {
 aside p {
   margin-bottom: 14px;
 }
+
+#weights-container {
+  margin-bottom: 15px;
+}
+
+.weight-input {
+  width: 100%;
+}
