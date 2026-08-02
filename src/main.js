@@ -1,4 +1,4 @@
 import './style.css'
-import { renderApp } from './app'
+import { renderLogin } from './components/login'
 
-renderApp()
+renderLogin()
