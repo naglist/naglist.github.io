@@ -1,5 +1,5 @@
 import { loginUser } from "../services/authService"
-
+import { renderApp } from "../app"
 
 export function renderLogin() {
 
@@ -98,9 +98,7 @@ function setupLogin() {
         user.email
       )
 
-import("../app").then((module) => {
-  module.renderApp()
-})
+renderApp()
 
 
     }
