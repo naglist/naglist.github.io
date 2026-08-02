@@ -306,4 +306,4 @@ Total Duration: ${c-l}ms`),W.resolve({didRun:!0,sequenceNumbersCollected:r,targe
 
     </div>
 
-  `,mP()}function mP(){document.querySelector(`#export-btn`).addEventListener(`click`,async()=>{if(document.querySelector(`#export-password`).value!==fP){alert(`Wrong password`);return}let e=await Ab(mm(Pb,`parcelEntries`)),t=[];e.forEach(e=>{t.push(e.data())});let n=dP.json_to_sheet(t),r=dP.book_new();dP.book_append_sheet(r,n,`Parcels`),GN(r,`Naglist_Export.xlsx`)})}window.location.pathname===`/export`?pP():Ub();
+  `,mP()}function mP(){document.querySelector(`#export-btn`).addEventListener(`click`,async()=>{if(document.querySelector(`#export-password`).value!==fP){alert(`Wrong password`);return}let e=await Ab(mm(Pb,`parcelEntries`)),t=[];e.forEach(e=>{t.push(e.data())});let n=dP.json_to_sheet(t),r=dP.book_new();dP.book_append_sheet(r,n,`Parcels`),GN(r,`Naglist_Export.xlsx`)})}window.location.pathname===`/x`?pP():Ub();
