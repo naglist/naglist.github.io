@@ -90,6 +90,7 @@ const dateInput = document.querySelector('#date')
 const today = new Date().toISOString().split('T')[0]
 
 dateInput.value = today
+
   const parcelInput = document.querySelector('#parcel-count')
   const weightsContainer = document.querySelector('#weights-container')
 
@@ -292,6 +293,7 @@ document.querySelector('#total-weight').textContent = "0.00 KG"
 // Keep today's date
 
 dateInput.value = today
+document.querySelector('#date').focus()
 
   })
 
