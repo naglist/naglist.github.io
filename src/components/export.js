@@ -1,13 +1,17 @@
 import * as XLSX from "xlsx"
-import { getDocs, collection } from "firebase/firestore"
+import { 
+  getDocs,
+  getDoc,
+  doc,
+  collection
+} from "firebase/firestore"
 import { db } from "../firebase/config"
 
 
-const EXPORT_PASSWORD = "yo"
 
 
 export function renderExport() {
-  console.log("EXPORT PAGE LOADED")
+
 
   document.querySelector("#app").innerHTML = `
 
@@ -60,14 +64,45 @@ function setupExport() {
     const password =
       document.querySelector("#export-password").value
 
+let passwordDoc
 
-    if(password !== EXPORT_PASSWORD) {
+try {
 
-      alert("Wrong password")
+  passwordDoc = await getDoc(
+    doc(db, "settings", "exp")
+  )
 
-      return
+}
+catch(error) {
 
-    }
+  console.error(error)
+
+  alert("Cannot verify export password")
+
+  return
+
+}
+
+
+if(!passwordDoc.exists()) {
+
+  alert("Export password not configured")
+
+  return
+
+}
+
+
+const savedPassword = passwordDoc.data().pass
+
+
+if(password !== savedPassword) {
+
+  alert("Wrong password")
+
+  return
+
+}
 
 
     const snapshot =
