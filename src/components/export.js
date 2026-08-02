@@ -7,6 +7,7 @@ const EXPORT_PASSWORD = "yo"
 
 
 export function renderExport() {
+  console.log("EXPORT PAGE LOADED")
 
   document.querySelector("#app").innerHTML = `
 
